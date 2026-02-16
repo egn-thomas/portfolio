@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mon-site-php
+    env: docker
+    plan: free
+    healthCheckPath: /
+```
+
+**.dockerignore** (pour accélérer le build) :
+```
+.git
+.gitignore
+README.md
+.env.local
+node_modules
