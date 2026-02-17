@@ -8,8 +8,8 @@ define('BASE_PATH', __DIR__);
 // Informations personnelles
 define('AUTHOR_NAME', 'Thomas Eugène');
 define('AUTHOR_EMAIL', 'thomas.eugene.62250@gmail.com');
-define('AUTHOR_LINKEDIN', 'https://linkedin.com/in/votre-profil');
-define('AUTHOR_GITHUB', 'https://github.com/votre-profil');
+define('AUTHOR_LINKEDIN', 'https://linkedin.com/in/egn-thomas');
+define('AUTHOR_GITHUB', 'https://github.com/egn-thomas');
 
 // Configuration Cloudflare R2
 define('R2_ACCOUNT_ID', '2d22915c5dcb387fa89b6ebd7283c3b0');

@@ -1,36 +1,33 @@
 <?php
-// Version simplifiée d'artwork pour les dessins
+// Version simplifiée d'artwork pour afficher une image seule
+// Accepte soit `id` (index dans data/dessins.php) soit `img` (URL encodée)
 // Récupérer les paramètres
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$id = isset($_GET['id']) ? (int)$_GET['id'] : null;
+$imgParam = isset($_GET['img']) ? $_GET['img'] : null;
 
-// Inclure les données des dessins
-require_once 'data/dessins.php';
-
-// Vérifier si l'item existe
-if (!isset($dessins[$id])) {
-    echo '<section class="section"><div class="container"><h2>Dessin non trouvé</h2><p>Le dessin demandé n\'existe pas.</p><a href="?page=dessins">Retour à la galerie</a></div></section>';
-    return;
+// Si un param img est fourni, l'utiliser directement
+if ($imgParam) {
+    $imageUrl = urldecode($imgParam);
+} else {
+    // Sinon tenter d'utiliser la collection dessins
+    require_once 'data/dessins.php';
+    if ($id === null || !isset($dessins[$id])) {
+        echo '<section class="section"><div class="container"><h2>Image non trouvée</h2><p>L\'image demandée n\'existe pas.</p><a href="?page=dessins">Retour à la galerie</a></div></section>';
+        return;
+    }
+    $imageUrl = $dessins[$id]['image'];
 }
-
-$item = $dessins[$id];
 ?>
 
 <section id="artwork" class="section">
     <div class="container">
         <div class="artwork-content">
             <div class="artwork-image-full">
-                <img src="<?php echo $item['image']; ?>" alt="Dessin <?php echo ($id + 1); ?>">
+                <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="Artwork">
             </div>
         </div>
-
         <div class="artwork-navigation">
             <a href="?page=dessins" class="btn-secondary">Retour à la galerie</a>
-            <?php if ($id > 0): ?>
-                <a href="?page=miniArtwork&id=<?php echo $id - 1; ?>" class="btn-secondary">Précédent</a>
-            <?php endif; ?>
-            <?php if ($id < count($dessins) - 1): ?>
-                <a href="?page=miniArtwork&id=<?php echo $id + 1; ?>" class="btn-secondary">Suivant</a>
-            <?php endif; ?>
         </div>
     </div>
 </section>
