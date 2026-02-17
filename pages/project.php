@@ -43,7 +43,7 @@ $project = $dev_projects[$project_id];
             <div class="project-gallery">
                 <?php foreach($project['gallery'] as $img): ?>
                     <div class="gallery-img">
-                        <a href="?page=miniArtwork&img=<?php echo urlencode($img); ?>" class="gallery-img-link">
+                        <a href="?page=miniArtwork&img=<?php echo urlencode($img); ?>&return_page=project&return_id=<?php echo $project_id; ?>" class="gallery-img-link">
                             <img src="<?php echo $img; ?>" alt="<?php echo $project['title']; ?>">
                         </a>
                     </div>

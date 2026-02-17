@@ -27,7 +27,20 @@ if ($imgParam) {
             </div>
         </div>
         <div class="artwork-navigation">
-            <a href="?page=dessins" class="btn-secondary">Retour à la galerie</a>
-        </div>
+                    <?php
+                    // Construire l'URL de retour : utiliser return_page/return_id si fournis, sinon revenir à dessins
+                    $returnPage = isset($_GET['return_page']) ? $_GET['return_page'] : null;
+                    $returnId = isset($_GET['return_id']) ? (int)$_GET['return_id'] : null;
+                    if ($returnPage) {
+                        $returnUrl = '?page=' . rawurlencode($returnPage);
+                        if ($returnId !== null) {
+                            $returnUrl .= '&id=' . $returnId;
+                        }
+                    } else {
+                        $returnUrl = '?page=dessins';
+                    }
+                    ?>
+                    <a href="<?php echo $returnUrl; ?>" class="btn-secondary">Retour à la galerie</a>
+                </div>
     </div>
 </section>
