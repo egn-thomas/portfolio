@@ -59,6 +59,24 @@ function display_skill($name, $level) {
     </div>';
 }
 
+// Afficher une galerie simple (sans titre/description) - pour les dessins
+function display_gallery_simple($images) {
+    $html = '<div class="gallery gallery-simple">';
+    $index = 0;
+    foreach ($images as $image) {
+        $imageUrl = is_array($image) ? $image['image'] : $image;
+        $html .= '
+        <a href="' . $imageUrl . '" class="gallery-item-link" target="_blank">
+            <div class="gallery-item gallery-item-simple">
+                <img src="' . $imageUrl . '" alt="Dessin ' . ($index + 1) . '">
+            </div>
+        </a>';
+        $index++;
+    }
+    $html .= '</div>';
+    return $html;
+}
+
 // Sécuriser les entrées
 function clean_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));

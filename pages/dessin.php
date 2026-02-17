@@ -1,5 +1,5 @@
 <?php
-require_once 'data/dessin.php';
+require_once 'data/dessins.php';
 ?>
 
 <section id="dessin" class="section">
@@ -7,6 +7,6 @@ require_once 'data/dessin.php';
         <h2 class="section-title">Dessins</h2>
         <p class="section-subtitle">Mes créations artistiques et entrainements sur papier</p>
         
-        <?php echo display_gallery($dessins, 'dessins'); ?>
+        <?php echo display_gallery_simple($dessins); ?>
     </div>
 </section>

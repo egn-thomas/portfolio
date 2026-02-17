@@ -8,6 +8,7 @@ $page = get_page();
 $page_titles = [
     'home' => SITE_NAME,
     'illustration' => 'Illustration - ' . SITE_NAME,
+    'dessins' => 'Dessins - ' . SITE_NAME,
     'dev' => 'Développement - ' . SITE_NAME,
     '3d' => 'Modélisation 3D - ' . SITE_NAME,
     'photo' => 'Photographie - ' . SITE_NAME,
@@ -26,6 +27,9 @@ include 'includes/nav.php';
 switch($page) {
     case 'illustration':
         include 'pages/illustration.php';
+        break;
+    case 'dessins':
+        include 'pages/dessin.php';
         break;
     case 'dev':
         include 'pages/developpement.php';
