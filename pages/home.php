@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </a>
-            <a href="?page=dessin" class="gallery-item-link">
+            <a href="?page=dessins" class="gallery-item-link">
                 <div class="gallery-item">
                     <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessin_sample.png" alt="Dessin Sample" class="item-image">
                     <div class="item-content">

@@ -14,7 +14,8 @@ $page_titles = [
     'photo' => 'Photographie - ' . SITE_NAME,
     'cv' => 'CV - ' . SITE_NAME,
     'project' => 'Projet - ' . SITE_NAME,
-    'artwork' => 'Œuvre - ' . SITE_NAME
+    'artwork' => 'Œuvre - ' . SITE_NAME,
+    'miniArtwork' => 'Dessin - ' . SITE_NAME
 ];
 
 $page_title = $page_titles[$page] ?? SITE_NAME;
@@ -48,6 +49,9 @@ switch($page) {
         break;
     case 'artwork':
         include 'pages/artwork.php';
+        break;
+    case 'miniArtwork':
+        include 'pages/miniArtwork.php';
         break;
     default:
         include 'pages/home.php';
