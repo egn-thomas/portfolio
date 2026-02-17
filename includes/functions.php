@@ -63,4 +63,100 @@ function display_skill($name, $level) {
 function clean_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }
+
+// Récupérer les fichiers d'un dossier du bucket R2
+function get_bucket_files($folder = 'dessins') {
+    $files = [];
+    
+    // Construction de l'URL pour lister les fichiers
+    $baseUrl = R2_ENDPOINT . '/images/' . $folder . '/';
+    
+    try {
+        // Essayer d'abord un listing public simple (si disponible)
+        $response = @file_get_contents($baseUrl);
+        
+        if ($response === false) {
+            // Si pas de listing public, utiliser l'API S3 avec credentials
+            if (R2_ACCESS_KEY && R2_SECRET_KEY) {
+                $files = get_bucket_files_s3($folder);
+            }
+        } else {
+            // Parser le listing HTML pour extraire les fichiers
+            // Chercher les liens vers les images
+            if (preg_match_all('/<a href="([^"]*\.(png|jpg|jpeg|gif|webp))"/i', $response, $matches)) {
+                foreach ($matches[1] as $file) {
+                    // Éviter les chemins relatifs du parent
+                    if (strpos($file, '../') === false) {
+                        $files[] = $baseUrl . basename($file);
+                    }
+                }
+            }
+        }
+    } catch (Exception $e) {
+        // Retourner un tableau vide en cas d'erreur
+        return [];
+    }
+    
+    // Trier les fichiers alphabétiquement
+    sort($files);
+    return $files;
+}
+
+// Récupérer les fichiers via l'API S3 de R2 (avec credentials)
+function get_bucket_files_s3($folder = 'dessins') {
+    $files = [];
+    $accessKey = R2_ACCESS_KEY;
+    $secretKey = R2_SECRET_KEY;
+    $bucket = R2_BUCKET;
+    $prefix = 'images/' . $folder . '/';
+    $host = R2_ENDPOINT . '.s3.amazonaws.com'; // Ou l'endpoint S3 approprié
+    
+    // Construire la requête S3 ListBucket
+    $method = 'GET';
+    $path = '/' . $bucket . '/';
+    $query = 'prefix=' . urlencode($prefix) . '&list-type=2';
+    $url = 'https://' . $host . $path . '?' . $query;
+    
+    try {
+        // Créer la signature AWS
+        $timestamp = gmdate('Ymd\\THis\\Z');
+        $shortDate = gmdate('Ymd');
+        $canonicalRequest = $method . "\n" . $path . "?" . $query . "\n" . "" . "\n" . "host:" . $host . "\n" . "\nhost" . "\n" . hash('sha256', '');
+        
+        // Note: Une implémentation complète d'AWS4 signature est complexe
+        // Pour simplifier, on utilisera curl avec une approche alternative
+        
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_HTTPHEADER => [
+                'Authorization: AWS4-HMAC-SHA256 Credential=' . $accessKey . '/' . $shortDate . '/auto/s3/aws4_request'
+            ]
+        ]);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        if ($response) {
+            // Parser le XML S3
+            $xml = simplexml_load_string($response);
+            if ($xml && isset($xml->Contents)) {
+                foreach ($xml->Contents as $content) {
+                    $key = (string)$content->Key;
+                    // Vérifier que c'est un fichier image
+                    if (preg_match('/\.(png|jpg|jpeg|gif|webp)$/i', $key)) {
+                        $files[] = R2_ENDPOINT . '/' . $key;
+                    }
+                }
+            }
+        }
+    } catch (Exception $e) {
+        error_log('Erreur R2 API: ' . $e->getMessage());
+    }
+    
+    sort($files);
+    return $files;
+}
 ?>

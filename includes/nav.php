@@ -7,6 +7,7 @@
             <li><a href="?page=dev" class="<?php echo is_active('dev'); ?>">Développement</a></li>
             <li><a href="?page=3d" class="<?php echo is_active('3d'); ?>">3D</a></li>
             <li><a href="?page=photo" class="<?php echo is_active('photo'); ?>">Photo</a></li>
+            <li><a href="?page=dessins" class="<?php echo is_active('dessins'); ?>">Dessin</a></li>
             <li><a href="?page=cv" class="<?php echo is_active('cv'); ?>">CV</a></li>
         </ul>
     </div>
