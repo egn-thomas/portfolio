@@ -37,21 +37,21 @@
                     </div>
                 </div>
             </a>
-            <a href="?page=photo" class="gallery-item-link">
-                <div class="gallery-item">
-                    <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photo_sample.png" alt="Photography Sample" class="item-image">
-                    <div class="item-content">
-                        <h3 class="item-title">Photographie</h3>
-                        <p class="item-description">Mes photos et projets photographiques</p>
-                    </div>
-                </div>
-            </a>
             <a href="?page=dessins" class="gallery-item-link">
                 <div class="gallery-item">
                     <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessin_sample.png" alt="Dessin Sample" class="item-image">
                     <div class="item-content">
                         <h3 class="item-title">Dessin</h3>
                         <p class="item-description">Mes dessins et croquis d'entrainement</p>
+                    </div>
+                </div>
+            </a>
+            <a href="?page=photo" class="gallery-item-link">
+                <div class="gallery-item">
+                    <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photo_sample.png" alt="Photography Sample" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-title">Photographie</h3>
+                        <p class="item-description">Mes photos et projets photographiques</p>
                     </div>
                 </div>
             </a>
