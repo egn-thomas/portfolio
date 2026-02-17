@@ -17,8 +17,33 @@
             <a href="<?php echo $cv_bw; ?>" target="_blank" class="btn-secondary">Voir le CV (noir & blanc)</a>
             <a href="<?php echo $cv_web; ?>" download="Thomas-Eugene-CV-2025-2026.pdf" class="btn-primary">Télécharger (web)</a>
             <a href="<?php echo $cv_bw; ?>" download="Thomas-Eugene-CV-2025-2026-bw.pdf" class="btn-secondary">Télécharger (noir & blanc)</a>
+            <button id="cv-toggle-preview" class="btn-secondary" style="margin-left:0.5rem">Afficher l'aperçu</button>
         </div>
 
-        <p style="margin-top:1rem; color: #94a3b8;">Si l'aperçu intégré est bloqué par votre navigateur, utilisez les boutons ci-dessus pour ouvrir ou télécharger le PDF.</p>
+        <div id="cv-preview-wrapper" style="margin:1.5rem 0; display:none">
+            <h3>Aperçu</h3>
+            <p>Si votre navigateur le permet, un aperçu du CV web est affiché ci-dessous. Si l'aperçu ne fonctionne pas, utilisez les boutons ci-dessus.</p>
+            <div style="width:100%; height:800px; border:1px solid rgba(255,255,255,0.06); margin-top:1rem;">
+                <iframe id="cv-preview-iframe" src="<?php echo $cv_web; ?>" style="width:100%; height:100%; border:0;" title="CV preview">Votre navigateur ne supporte pas l'aperçu intégré. Cliquez sur le bouton 'Voir le CV'.</iframe>
+            </div>
+        </div>
+
+        <script>
+        (function(){
+            var btn = document.getElementById('cv-toggle-preview');
+            var wrapper = document.getElementById('cv-preview-wrapper');
+            var iframe = document.getElementById('cv-preview-iframe');
+            btn && btn.addEventListener('click', function(){
+                if (wrapper.style.display === 'none' || wrapper.style.display === '') {
+                    wrapper.style.display = 'block';
+                    btn.textContent = "Masquer l'aperçu";
+                    iframe && (iframe.src = iframe.src);
+                } else {
+                    wrapper.style.display = 'none';
+                    btn.textContent = "Afficher l'aperçu";
+                }
+            });
+        })();
+        </script>
     </div>
 </section>
