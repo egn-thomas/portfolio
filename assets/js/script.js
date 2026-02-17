@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Injecter du CSS pour override les couleurs de liens visités dans les galeries
+  var style = document.createElement("style");
+  style.textContent = `
+    .gallery-item-link h3,
+    .gallery-item-link p,
+    .gallery-item-link {
+      color: inherit !important;
+    }
+    .gallery-item-link:visited,
+    .gallery-item-link:visited h3,
+    .gallery-item-link:visited p {
+      color: inherit !important;
+    }
+  `;
+  document.head.appendChild(style);
+
   function processImage(img) {
     // Attendre que l'image soit vraiment chargée
     function adjust() {
@@ -84,24 +100,35 @@ document.addEventListener("DOMContentLoaded", function () {
         // Find the gallery-item parent and adjust text
         var galleryItem = img.closest(".gallery-item");
         if (galleryItem) {
+          var textColor = luminance > 0.5 ? "#0f172a" : "#f8fafc";
+
+          // Apply inline styles directly to container with high specificity
+          galleryItem.style.color = textColor;
+
+          // Target the link directly
+          var link = galleryItem.closest("a");
+          if (link) {
+            link.style.color = textColor;
+          }
+
+          // Apply color to all text-containing elements
+          var itemTitle = galleryItem.querySelector(".item-title");
+          var itemDesc = galleryItem.querySelector(".item-description");
+
+          if (itemTitle) {
+            itemTitle.style.color = textColor + " !important";
+          }
+          if (itemDesc) {
+            itemDesc.style.color = textColor + " !important";
+          }
+
+          // Also update any direct children
           var content = galleryItem.querySelector(".item-content");
           if (content) {
-            // Determine color based on image brightness
-            var textColor = luminance > 0.5 ? "#0f172a" : "#f8fafc";
-
-            // Apply color to item-content and all child elements
-            content.style.color = textColor;
-
-            // Apply color to all direct and nested text elements
-            var textElements = content.querySelectorAll("h3, p, a, span");
-            textElements.forEach(function (el) {
-              el.style.color = textColor + " !important";
-            });
-
-            // Also apply to the link wrapper if needed
-            var link = galleryItem.closest("a");
-            if (link) {
-              link.style.color = textColor;
+            content.style.color = textColor + " !important";
+            var children = content.children;
+            for (var i = 0; i < children.length; i++) {
+              children[i].style.color = textColor + " !important";
             }
           }
         }
