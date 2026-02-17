@@ -82,93 +82,96 @@ function clean_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-// Récupérer les fichiers d'un dossier du bucket R2
+// Récupérer les fichiers d'un dossier du bucket R2 via API S3
 function get_bucket_files($folder = 'dessins') {
     $files = [];
     
-    // Construction de l'URL pour lister les fichiers
-    $baseUrl = R2_ENDPOINT . '/images/' . $folder . '/';
-    
-    try {
-        // Essayer d'abord un listing public simple (si disponible)
-        $response = @file_get_contents($baseUrl);
-        
-        if ($response === false) {
-            // Si pas de listing public, utiliser l'API S3 avec credentials
-            if (R2_ACCESS_KEY && R2_SECRET_KEY) {
-                $files = get_bucket_files_s3($folder);
-            }
-        } else {
-            // Parser le listing HTML pour extraire les fichiers
-            // Chercher les liens vers les images
-            if (preg_match_all('/<a href="([^"]*\.(png|jpg|jpeg|gif|webp))"/i', $response, $matches)) {
-                foreach ($matches[1] as $file) {
-                    // Éviter les chemins relatifs du parent
-                    if (strpos($file, '../') === false) {
-                        $files[] = $baseUrl . basename($file);
-                    }
-                }
-            }
-        }
-    } catch (Exception $e) {
-        // Retourner un tableau vide en cas d'erreur
+    // Si les credentials ne sont pas configurés, impossible de lister
+    if (!R2_ACCESS_KEY || !R2_SECRET_KEY) {
+        error_log("R2 credentials manquants - impossible de lister les fichiers du bucket");
         return [];
     }
     
-    // Trier les fichiers alphabétiquement
-    sort($files);
-    return $files;
-}
-
-// Récupérer les fichiers via l'API S3 de R2 (avec credentials)
-function get_bucket_files_s3($folder = 'dessins') {
-    $files = [];
+    // Paramètres S3
     $accessKey = R2_ACCESS_KEY;
     $secretKey = R2_SECRET_KEY;
-    $bucket = R2_BUCKET;
-    $prefix = 'images/' . $folder . '/';
-    $host = R2_ENDPOINT . '.s3.amazonaws.com'; // Ou l'endpoint S3 approprié
+    $bucket = 'images'; // Le bucket est "images"
+    $region = 'auto';
+    $host = 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev';
+    $prefix = $folder . '/'; // Préfixe pour le dossier (dessins/, illustrations/, etc)
     
-    // Construire la requête S3 ListBucket
+    // Paramètres de la requête
     $method = 'GET';
-    $path = '/' . $bucket . '/';
-    $query = 'prefix=' . urlencode($prefix) . '&list-type=2';
-    $url = 'https://' . $host . $path . '?' . $query;
+    $action = '?list-type=2&prefix=' . urlencode($prefix);
+    $url = $host . '/' . $action;
     
     try {
-        // Créer la signature AWS
+        // Date au format AWS
         $timestamp = gmdate('Ymd\\THis\\Z');
         $shortDate = gmdate('Ymd');
-        $canonicalRequest = $method . "\n" . $path . "?" . $query . "\n" . "" . "\n" . "host:" . $host . "\n" . "\nhost" . "\n" . hash('sha256', '');
         
-        // Note: Une implémentation complète d'AWS4 signature est complexe
-        // Pour simplifier, on utilisera curl avec une approche alternative
+        // Créer la requête canonicale pour AWS Signature V4
+        $canonicalRequest = $method . "\n";
+        $canonicalRequest .= "/" . "\n";
+        $canonicalRequest .= $action . "\n";
+        $canonicalRequest .= "host:" . parse_url($host, PHP_URL_HOST) . "\n\n";
+        $canonicalRequest .= "host\n";
+        $canonicalRequest .= hash('sha256', '');
         
+        // String to sign
+        $algorithm = 'AWS4-HMAC-SHA256';
+        $credentialScope = $shortDate . '/' . $region . '/s3/aws4_request';
+        $hashedCanonical = hash('sha256', $canonicalRequest);
+        
+        $stringToSign = $algorithm . "\n";
+        $stringToSign .= $timestamp . "\n";
+        $stringToSign .= $credentialScope . "\n";
+        $stringToSign .= $hashedCanonical;
+        
+        // Calculer la signature
+        $kDate = hash_hmac('sha256', $shortDate, 'AWS4' . $secretKey, true);
+        $kRegion = hash_hmac('sha256', $region, $kDate, true);
+        $kService = hash_hmac('sha256', 's3', $kRegion, true);
+        $kSigning = hash_hmac('sha256', 'aws4_request', $kService, true);
+        $signature = bin2hex(hash_hmac('sha256', $stringToSign, $kSigning, true));
+        
+        // Construire l'header Authorization
+        $authHeader = $algorithm . ' Credential=' . $accessKey . '/' . $credentialScope;
+        $authHeader .= ', SignedHeaders=host, Signature=' . $signature;
+        
+        // Faire la requête curl
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 10,
             CURLOPT_HTTPHEADER => [
-                'Authorization: AWS4-HMAC-SHA256 Credential=' . $accessKey . '/' . $shortDate . '/auto/s3/aws4_request'
+                'Authorization: ' . $authHeader,
+                'X-Amz-Date: ' . $timestamp,
+                'Host: ' . parse_url($host, PHP_URL_HOST)
             ]
         ]);
         
         $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         
-        if ($response) {
-            // Parser le XML S3
+        if ($httpCode === 200 && $response) {
+            // Parser le XML S3 ListBucketResult
             $xml = simplexml_load_string($response);
             if ($xml && isset($xml->Contents)) {
                 foreach ($xml->Contents as $content) {
                     $key = (string)$content->Key;
+                    // Extraire juste le nom du fichier
+                    $fileName = basename($key);
                     // Vérifier que c'est un fichier image
-                    if (preg_match('/\.(png|jpg|jpeg|gif|webp)$/i', $key)) {
-                        $files[] = R2_ENDPOINT . '/' . $key;
+                    if (preg_match('/\.(png|jpg|jpeg|gif|webp)$/i', $fileName)) {
+                        $files[] = R2_ENDPOINT . '/images/' . $key;
                     }
                 }
             }
+        } else {
+            error_log("R2 API Error: HTTP $httpCode");
         }
     } catch (Exception $e) {
         error_log('Erreur R2 API: ' . $e->getMessage());
