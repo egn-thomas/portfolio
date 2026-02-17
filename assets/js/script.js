@@ -87,4 +87,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
+
+  // Mobile navigation toggle
+  (function () {
+    var navToggle = document.getElementById("nav-toggle");
+    var closeOnLinkClick = function () {
+      document.body.classList.remove("nav-open");
+      if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    if (navToggle) {
+      navToggle.addEventListener("click", function (e) {
+        var open = document.body.classList.toggle("nav-open");
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      // Close when clicking a link inside nav
+      document.querySelectorAll(".nav-links a").forEach(function (a) {
+        a.addEventListener("click", closeOnLinkClick);
+      });
+
+      // Close on Escape
+      document.addEventListener("keydown", function (ev) {
+        if (
+          ev.key === "Escape" &&
+          document.body.classList.contains("nav-open")
+        ) {
+          document.body.classList.remove("nav-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  })();
 });

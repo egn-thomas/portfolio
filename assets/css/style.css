@@ -772,3 +772,115 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
+
+/* Mobile-first responsive improvements */
+@media (max-width: 900px) {
+  /* Reduce section padding on small screens */
+  .section {
+    padding: 4rem 1rem 3rem;
+  }
+
+  /* Stack two-column layouts into single column */
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-details {
+    display: block;
+  }
+
+  .cv-section {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Navigation: hide desktop links and show hamburger */
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 44px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+  }
+
+  .nav-toggle:focus {
+    outline: 2px solid rgba(99, 102, 241, 0.25);
+    outline-offset: 2px;
+  }
+
+  .hamburger-line {
+    width: 26px;
+    height: 2px;
+    background: var(--light);
+    display: block;
+    border-radius: 2px;
+  }
+
+  /* Hide normal horizontal links by default on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* When menu open, show vertical overlay menu */
+  body.nav-open .nav-links {
+    display: flex;
+    position: fixed;
+    top: 72px;
+    right: 0;
+    width: 80%;
+    max-width: 360px;
+    height: calc(100% - 72px);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: -20px 0 40px rgba(2, 6, 23, 0.6);
+    z-index: 1200;
+    overflow-y: auto;
+  }
+
+  body.nav-open nav {
+    z-index: 1300;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 0.25rem;
+    font-size: 1.1rem;
+  }
+
+  /* Make gallery items taller and stack nicely */
+  .gallery-item {
+    aspect-ratio: auto;
+    min-height: 220px;
+  }
+
+  /* Reduce hero top offset on mobile */
+  .hero {
+    margin-top: -72px;
+    padding-top: 72px;
+  }
+}

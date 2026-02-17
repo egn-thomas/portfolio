@@ -1,6 +1,13 @@
 <nav>
     <div class="nav-container">
         <div class="logo"><?php echo AUTHOR_NAME; ?></div>
+
+        <button id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" class="nav-toggle">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <ul class="nav-links">
             <li><a href="?page=home" class="<?php echo is_active('home'); ?>">Accueil</a></li>
             <li><a href="?page=illustration" class="<?php echo is_active('illustration'); ?>">Illustration</a></li>

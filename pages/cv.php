@@ -15,8 +15,6 @@
         <div class="cv-actions" style="margin:1.5rem 0; display:flex; gap:0.75rem; flex-wrap:wrap;">
             <a href="<?php echo $cv_web; ?>" target="_blank" class="btn-primary">Voir le CV (version web)</a>
             <a href="<?php echo $cv_bw; ?>" target="_blank" class="btn-secondary">Voir le CV (noir & blanc)</a>
-            <a href="<?php echo $cv_web; ?>" download="Thomas-Eugene-CV-2025-2026.pdf" class="btn-primary">Télécharger (web)</a>
-            <a href="<?php echo $cv_bw; ?>" download="Thomas-Eugene-CV-2025-2026-bw.pdf" class="btn-secondary">Télécharger (noir & blanc)</a>
             <button id="cv-toggle-preview" class="btn-secondary" style="margin-left:0.5rem">Afficher l'aperçu</button>
         </div>
 
