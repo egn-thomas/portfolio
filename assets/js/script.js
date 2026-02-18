@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (themeToggleCheckbox) {
     // Load theme preference from localStorage
     var savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
+    if (!(savedTheme === "dark")) {
       document.body.classList.add("dark-mode");
       themeToggleCheckbox.checked = true;
     }
