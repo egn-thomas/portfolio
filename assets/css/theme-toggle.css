@@ -2,7 +2,7 @@
 .theme-toggle-wrapper {
   position: fixed;
   top: 115px;
-  right: 2rem;
+  right: 5rem;
   z-index: 999;
 }
 

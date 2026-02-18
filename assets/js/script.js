@@ -127,12 +127,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
+      themeToggleCheckbox.checked = false;
+    } else {
       themeToggleCheckbox.checked = true;
     }
 
     themeToggleCheckbox.addEventListener("change", function () {
-      var isDarkMode = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      if (themeToggleCheckbox.checked) {
+        // Light mode (unchecked = dark, checked = light)
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+      } else {
+        // Dark mode
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+      }
     });
   }
 });
