@@ -18,6 +18,8 @@ define('R2_SECRET_KEY', ''); // À remplir si API listing ne fonctionne pas
 define('R2_BUCKET', 'images'); // À adapter si nécessaire
 define('R2_ENDPOINT', 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev');
 
+define('LOGO_URL', R2_ENDPOINT . '/' . R2_BUCKET . '/logo.png');
+
 // Fonctions utiles
 function get_page() {
     return isset($_GET['page']) ? $_GET['page'] : 'home';

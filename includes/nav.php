@@ -1,6 +1,9 @@
 <nav>
     <div class="nav-container">
-        <div class="logo"><?php echo AUTHOR_NAME; ?></div>
+        <div class="logo">
+            <img src="<?php echo LOGO_URL; ?>" alt="Logo <?php echo SITE_NAME; ?>" class="logo-img">
+            <span><?php echo AUTHOR_NAME; ?></span>
+        </div>
 
         <button id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" class="nav-toggle">
             <span class="hamburger-line"></span>
