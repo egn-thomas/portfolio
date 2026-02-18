@@ -5,6 +5,10 @@
         </div>
         <div class="site-title"><?php echo AUTHOR_NAME; ?></div>
 
+        <button id="theme-toggle" aria-label="Changer le thème" class="theme-toggle" title="Changer le thème">
+            <span class="theme-icon">🌙</span>
+        </button>
+
         <button id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" class="nav-toggle">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>

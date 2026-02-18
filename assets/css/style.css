@@ -12,6 +12,13 @@
   --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+body.dark-mode {
+  --primary: #9c93ff;
+  --secondary: #ff7fcc;
+  --dark: #f8fafc;
+  --light: #0f172a;
+}
+
 body {
   font-family:
     "Inter",
@@ -95,6 +102,32 @@ nav {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s,
+    filter 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+  filter: brightness(1.2);
+}
+
+.theme-icon {
+  display: inline-block;
+  transition: transform 0.3s;
 }
 
 /* Hero Section */
