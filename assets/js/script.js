@@ -120,21 +120,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })();
 
-  // Theme toggle functionality
-  var themeToggle = document.getElementById("theme-toggle");
-  if (themeToggle) {
+  // Theme toggle functionality with checkbox
+  var themeToggleCheckbox = document.getElementById("theme-toggle-checkbox");
+  if (themeToggleCheckbox) {
     // Load theme preference from localStorage
     var savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
-      themeToggle.querySelector(".theme-icon").textContent = "☀️";
+      themeToggleCheckbox.checked = true;
     }
 
-    themeToggle.addEventListener("click", function () {
+    themeToggleCheckbox.addEventListener("change", function () {
       var isDarkMode = document.body.classList.toggle("dark-mode");
-      themeToggle.querySelector(".theme-icon").textContent = isDarkMode
-        ? "☀️"
-        : "🌙";
       localStorage.setItem("theme", isDarkMode ? "dark" : "light");
     });
   }

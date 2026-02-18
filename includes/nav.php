@@ -5,10 +5,6 @@
         </div>
         <div class="site-title"><?php echo AUTHOR_NAME; ?></div>
 
-        <button id="theme-toggle" aria-label="Changer le thème" class="theme-toggle" title="Changer le thème">
-            <span class="theme-icon">🌙</span>
-        </button>
-
         <button id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" class="nav-toggle">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -26,3 +22,20 @@
         </ul>
     </div>
 </nav>
+
+<div class="theme-toggle-wrapper">
+    <input class="input" id="theme-toggle-checkbox" type="checkbox" />
+    <label class="theme-toggle" for="theme-toggle-checkbox">
+        <span class="toggle__handler">
+            <span class="crater crater--1"></span>
+            <span class="crater crater--2"></span>
+            <span class="crater crater--3"></span>
+        </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>

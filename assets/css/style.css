@@ -114,34 +114,6 @@ body.dark-mode nav {
   }
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  background: none;
-  border: none;
-  color: var(--light);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    transform 0.3s,
-    filter 0.3s;
-}
-
-@media (hover: hover) {
-  .theme-toggle:hover {
-    transform: rotate(20deg);
-    filter: brightness(1.2);
-  }
-}
-
-.theme-icon {
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
 /* Hero Section */
 .hero {
   height: 100vh;
