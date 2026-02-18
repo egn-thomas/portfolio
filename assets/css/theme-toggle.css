@@ -2,16 +2,14 @@
 .theme-toggle-wrapper {
   position: fixed;
   top: 115px;
-  right: 5rem;
+  right: 2rem;
   z-index: 999;
+  overflow: hidden;
 }
 
 .theme-toggle-wrapper .input {
   position: absolute;
   left: -99em;
-  opacity: 0;
-  width: 0;
-  height: 0;
 }
 
 .theme-toggle {
@@ -32,7 +30,8 @@
   content: "LIGHT";
   position: absolute;
   left: -70px;
-  top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 12px;
   color: #749ed7;
   font-weight: 600;
@@ -42,7 +41,8 @@
   content: "DARK";
   position: absolute;
   right: -60px;
-  top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 12px;
   font-weight: 600;
 }
@@ -59,7 +59,7 @@
   border-radius: 50px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform: rotate(0);
+  transform: rotate(-45deg);
 }
 
 .toggle__handler .crater {
@@ -214,73 +214,32 @@
 }
 
 /* Dark mode adjustments */
-body.dark-mode .theme-toggle {
-  background-color: #749dd6;
-}
-
-body.dark-mode .theme-toggle:before {
-  color: #fff;
-}
-
-body.dark-mode .theme-toggle:after {
-  color: #749ed7;
-}
-
 body.dark-mode .toggle__handler {
   background-color: #ffe5b5;
   transform: translate3d(40px, 0, 0) rotate(0);
 }
 
-body.dark-mode .toggle__handler .crater {
-  opacity: 1;
-}
-
-body.dark-mode .star--1 {
-  width: 2px;
-  height: 2px;
-}
-
-body.dark-mode .star--2 {
-  width: 4px;
-  height: 4px;
-  transform: translate3d(-5px, 0, 0);
-}
-
-body.dark-mode .star--3 {
-  width: 2px;
-  height: 2px;
-  transform: translate3d(-7px, 0, 0);
-}
-
-body.dark-mode .star--4,
-body.dark-mode .star--5,
-body.dark-mode .star--6 {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .theme-toggle-wrapper {
-    top: 75px;
+    top: 105px;
     right: 1rem;
   }
 
   .theme-toggle {
     width: 70px;
-    height: 40px;
+    height: auto;
+    aspect-ratio: 90/50;
   }
 
   .theme-toggle:before {
     font-size: 10px;
     left: -55px;
-    top: 12px;
   }
 
   .theme-toggle:after {
     font-size: 10px;
     right: -50px;
-    top: 12px;
   }
 
   .toggle__handler {
