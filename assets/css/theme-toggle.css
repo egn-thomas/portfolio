@@ -238,7 +238,7 @@ body.dark-mode .theme-toggle:after {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .theme-toggle-wrapper {
     top: 105px;
     right: 1rem;
@@ -265,4 +265,4 @@ body.dark-mode .theme-toggle:after {
     top: 2px;
     left: 2px;
   }
-}
+} */
