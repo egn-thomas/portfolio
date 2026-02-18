@@ -48,13 +48,13 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  max-height: 32px;
-  max-width: 32px;
+  max-height: 48px;
+  max-width: 48px;
 }
 
 .logo-img {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 48px;
+  max-height: 48px;
   width: auto;
   object-fit: contain;
 }
