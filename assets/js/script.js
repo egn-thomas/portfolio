@@ -125,20 +125,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (themeToggleCheckbox) {
     // Load theme preference from localStorage
     var savedTheme = localStorage.getItem("theme");
-    if (!(savedTheme === "dark")) {
+    if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
       themeToggleCheckbox.checked = false;
     } else {
+      document.body.classList.remove("dark-mode");
       themeToggleCheckbox.checked = true;
     }
 
     themeToggleCheckbox.addEventListener("change", function () {
       if (themeToggleCheckbox.checked) {
-        // Light mode (unchecked = dark, checked = light)
+        // Light mode (checked = light)
         document.body.classList.remove("dark-mode");
         localStorage.setItem("theme", "light");
       } else {
-        // Dark mode
+        // Dark mode (unchecked = dark)
         document.body.classList.add("dark-mode");
         localStorage.setItem("theme", "dark");
       }
