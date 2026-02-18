@@ -225,9 +225,16 @@
 }
 
 /* Dark mode adjustments */
-body.dark-mode .toggle__handler {
-  background-color: #ffe5b5;
-  transform: translate3d(40px, 0, 0) rotate(0);
+body.dark-mode .theme-toggle {
+  background-color: #749dd6;
+}
+
+body.dark-mode .theme-toggle:before {
+  color: #fff;
+}
+
+body.dark-mode .theme-toggle:after {
+  color: #749ed7;
 }
 
 /* Mobile responsiveness */
