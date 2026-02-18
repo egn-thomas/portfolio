@@ -964,18 +964,15 @@ body.dark-mode footer {
   .gallery-item {
     aspect-ratio: auto;
     min-height: 220px;
+    max-height: 300px;
   }
 
   /* Reduce hero top offset on mobile */
   .hero {
     margin-top: -72px;
     padding-top: 72px;
-  }
-
-  .hero-content {
-    display: flex;
     flex-direction: column;
-    width: 100%;
+    text-align: center;
   }
 
   .hero h1 {
