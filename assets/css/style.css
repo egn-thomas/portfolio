@@ -53,6 +53,8 @@ nav {
 }
 
 .logo-img {
+  max-width: 32px;
+  max-height: 32px;
   width: auto;
   object-fit: contain;
 }
