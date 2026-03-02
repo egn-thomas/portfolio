@@ -64,8 +64,14 @@ $section_title = $section_titles[$type] ?? ucfirst($type);
 
         <div class="artwork-content">
             <div class="artwork-image-full">
-                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>">
-            </div>
+            <?php if ($id > 0): ?>
+                <a href="?page=artwork&type=<?php echo $type; ?>&id=<?php echo $id - 1; ?>" class="image-arrow prev" aria-label="Précédent">‹</a>
+            <?php endif; ?>
+            <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>">
+            <?php if ($id < count($items) - 1): ?>
+                <a href="?page=artwork&type=<?php echo $type; ?>&id=<?php echo $id + 1; ?>" class="image-arrow next" aria-label="Suivant">›</a>
+            <?php endif; ?>
+        </div>
         </div>
 
         <div class="artwork-navigation">
