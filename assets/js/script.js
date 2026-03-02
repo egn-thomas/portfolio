@@ -249,10 +249,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     mo.observe(document.body, { childList: true, subtree: true });
 
-    // Controls
-    closeBtn.addEventListener("click", hideLightbox);
-    prevBtn.addEventListener("click", showPrev);
-    nextBtn.addEventListener("click", showNext);
+    // Controls (defensive: check elements exist and stop propagation)
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        hideLightbox();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        showPrev();
+      });
+      prevBtn.style.pointerEvents = "auto";
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        showNext();
+      });
+      nextBtn.style.pointerEvents = "auto";
+    }
 
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) hideLightbox();
