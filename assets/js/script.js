@@ -145,4 +145,125 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  /* Lightbox viewer for all galleries */
+  (function () {
+    var lightbox = document.getElementById("lightbox");
+    if (!lightbox) return;
+    var lbImage = lightbox.querySelector(".lightbox-image");
+    var lbCaption = lightbox.querySelector(".lightbox-caption");
+    var closeBtn = lightbox.querySelector(".lightbox-close");
+    var prevBtn = lightbox.querySelector(".lightbox-prev");
+    var nextBtn = lightbox.querySelector(".lightbox-next");
+
+    var currentGroup = [];
+    var currentIndex = 0;
+
+    function buildGroupFrom(img) {
+      var container =
+        img.closest(
+          ".gallery, .projects-list, .project-gallery, .project-card",
+        ) || document;
+      var imgs = Array.prototype.slice.call(
+        container.querySelectorAll(
+          ".gallery-item img, .item-image, .project-image img, .artwork-image-full img",
+        ),
+      );
+      // Filter only images with src
+      imgs = imgs.filter(function (i) {
+        return i && i.src;
+      });
+      return imgs;
+    }
+
+    function showLightbox(group, index) {
+      currentGroup = group;
+      currentIndex = index;
+      var img = group[index];
+      lbImage.src = img.src;
+      lbImage.alt = img.alt || "";
+      // Try to find a caption nearby
+      var titleEl =
+        img.closest(".gallery-item") &&
+        img.closest(".gallery-item").querySelector(".item-title");
+      var caption = (titleEl && titleEl.innerText) || img.alt || "";
+      lbCaption.textContent = caption;
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideLightbox() {
+      lightbox.setAttribute("aria-hidden", "true");
+      lbImage.src = "";
+      lbCaption.textContent = "";
+      document.body.style.overflow = "";
+    }
+
+    function showPrev() {
+      if (!currentGroup.length) return;
+      currentIndex =
+        (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+      showLightbox(currentGroup, currentIndex);
+    }
+
+    function showNext() {
+      if (!currentGroup.length) return;
+      currentIndex = (currentIndex + 1) % currentGroup.length;
+      showLightbox(currentGroup, currentIndex);
+    }
+
+    // Attach click handlers to all gallery images (and observe additions)
+    function attachHandlersTo(img) {
+      if (img.__lightboxAttached) return;
+      img.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var group = buildGroupFrom(img);
+        var index = group.indexOf(img);
+        if (index === -1) index = 0;
+        showLightbox(group, index);
+      });
+      img.__lightboxAttached = true;
+    }
+
+    document
+      .querySelectorAll(
+        ".gallery-item img, .item-image, .project-image img, .artwork-image-full img",
+      )
+      .forEach(attachHandlersTo);
+
+    // Observe for dynamic images
+    var mo = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (n) {
+          if (n.nodeType === 1) {
+            n.querySelectorAll &&
+              n
+                .querySelectorAll(
+                  ".gallery-item img, .item-image, .project-image img, .artwork-image-full img",
+                )
+                .forEach(attachHandlersTo);
+            if (n.matches && n.matches("img")) attachHandlersTo(n);
+          }
+        });
+      });
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    // Controls
+    closeBtn.addEventListener("click", hideLightbox);
+    prevBtn.addEventListener("click", showPrev);
+    nextBtn.addEventListener("click", showNext);
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) hideLightbox();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (lightbox.getAttribute("aria-hidden") === "false") {
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "Escape") hideLightbox();
+      }
+    });
+  })();
 });
