@@ -138,4 +138,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // make entire project cards clickable
+  (function () {
+    document.querySelectorAll(".project-card").forEach(function (card) {
+      var link = card.querySelector("a");
+      if (link) {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", function (ev) {
+          if (ev.target.tagName !== "A") {
+            window.location.href = link.href;
+          }
+        });
+      }
+    });
+  })();
 });
