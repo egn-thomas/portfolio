@@ -85,12 +85,36 @@ document.addEventListener("DOMContentLoaded", function () {
         a.addEventListener("click", closeOnLinkClick);
       });
       document.addEventListener("keydown", function (ev) {
-        if (ev.key === "Escape" && document.body.classList.contains("nav-open")) {
+        if (
+          ev.key === "Escape" &&
+          document.body.classList.contains("nav-open")
+        ) {
           document.body.classList.remove("nav-open");
           navToggle.setAttribute("aria-expanded", "false");
         }
       });
     }
+  })();
+
+  // preserve scroll position when using artwork arrows
+  (function () {
+    // on load, restore if stored
+    var pos = sessionStorage.getItem("scrollPos");
+    if (pos) {
+      window.scrollTo(0, parseInt(pos, 10) || 0);
+      sessionStorage.removeItem("scrollPos");
+    }
+    // intercept clicks on arrows (both inline and navigation buttons)
+    function handleArrowClick(ev) {
+      // store current scroll
+      sessionStorage.setItem("scrollPos", window.scrollY);
+      // allow navigation to proceed normally
+    }
+    document
+      .querySelectorAll(".image-arrow, .artwork-navigation a")
+      .forEach(function (a) {
+        a.addEventListener("click", handleArrowClick);
+      });
   })();
 
   // theme toggle
