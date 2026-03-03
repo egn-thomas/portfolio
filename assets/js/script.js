@@ -153,4 +153,41 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   })();
+
+  // email button copy-to-clipboard with toast notification
+  (function () {
+    var emailBtn = document.getElementById("footer-email");
+    if (emailBtn) {
+      emailBtn.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var email = emailBtn.dataset.email;
+        if (!email) return;
+        navigator.clipboard.writeText(email).then(
+          function () {
+            showToast("Email copied to clipboard");
+          },
+          function (err) {
+            console.error("Clipboard write failed", err);
+          },
+        );
+      });
+    }
+
+    function showToast(message) {
+      var toast = document.createElement("div");
+      toast.className = "toast";
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      // force reflow for transition
+      requestAnimationFrame(function () {
+        toast.classList.add("show");
+      });
+      setTimeout(function () {
+        toast.classList.remove("show");
+        toast.addEventListener("transitionend", function () {
+          toast.remove();
+        });
+      }, 2000);
+    }
+  })();
 });

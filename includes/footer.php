@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-links">
-        <a href="mailto:<?php echo AUTHOR_EMAIL; ?>">Email</a>
+        <a id="footer-email" data-email="<?php echo AUTHOR_EMAIL; ?>" href="mailto:<?php echo AUTHOR_EMAIL; ?>">Email</a>
         <a href="<?php echo AUTHOR_LINKEDIN; ?>">LinkedIn</a>
         <a href="<?php echo AUTHOR_GITHUB; ?>">GitHub</a>
     </div>

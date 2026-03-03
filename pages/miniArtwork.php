@@ -23,6 +23,17 @@ if ($imgParam) {
     <div class="container">
         <div class="artwork-content">
             <div class="artwork-image-full">
+                <?php if ($id !== null):
+                    // calculate bounds for previous/next within dessins list if available
+                    require_once 'data/dessins.php';
+                    $max = count($dessins) - 1;
+                    if ($id > 0): ?>
+                        <a href="?page=miniArtwork&id=<?php echo $id - 1; ?>" class="image-arrow prev" aria-label="Précédent">‹</a>
+                    <?php endif;
+                    if ($id !== null && $id < $max): ?>
+                        <a href="?page=miniArtwork&id=<?php echo $id + 1; ?>" class="image-arrow next" aria-label="Suivant">›</a>
+                    <?php endif;
+                endif; ?>
                 <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="Artwork">
             </div>
         </div>
