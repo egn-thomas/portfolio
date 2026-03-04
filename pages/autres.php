@@ -8,8 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tags'])) {
 }
 
 // Récupérer les tags depuis l'URL si présents
-if (isset($_GET['tags']) && !empty($_GET['tags'])) {
-    $selected_tags = array_filter(explode(',', $_GET['tags']));
+if (isset($_GET['tags'])) {
+    if (is_array($_GET['tags'])) {
+        // tags[] style
+        $selected_tags = array_filter($_GET['tags']);
+    } else {
+        // comma-separated string (fallback)
+        $selected_tags = array_filter(explode(',', $_GET['tags']));
+    }
 }
 
 // Filtrer les projets
