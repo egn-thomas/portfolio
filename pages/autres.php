@@ -52,6 +52,7 @@ $type_labels = [
             <div class="filter-container">
                 <h3 class="filter-title">Filtrer par tags</h3>
                 <form id="filter-form" class="filter-form" method="get">
+                    <input type="hidden" name="page" value="autres">
                     <div class="filter-tags">
                         <?php
                         sort($all_tags);

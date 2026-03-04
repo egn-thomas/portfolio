@@ -24,7 +24,7 @@ $all_projects = [
         'date' => '2026-02',
         'role' => 'Développeur Jeu',
         'type' => 'dev',
-        'tags' => ['Développement', 'C++', 'Jeu', 'SFML']
+        'tags' => ['Développement', 'C++']
     ],
     [
         'id' => 'dev_1',
@@ -44,7 +44,7 @@ $all_projects = [
         'date' => '2026-01',
         'role' => 'Développeur',
         'type' => 'dev',
-        'tags' => ['Développement', 'Python', 'IA/ML', 'Traitement d\'images']
+        'tags' => ['Développement', 'Python']
     ],
     
     // Illustrations
@@ -55,7 +55,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/foret.png',
         'date' => '2025-12',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Digital Painting', 'Paysage']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_1',
@@ -64,7 +64,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/blizzard.png',
         'date' => '2025-10',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Concept Art', 'Personnage']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_2',
@@ -73,7 +73,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/scaphandre.png',
         'date' => '2024-09',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Concept Art', 'Atmosphère']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_3',
@@ -82,7 +82,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/bucheEtPapillons.png',
         'date' => '2025-07',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Illustration Jeunesse', 'Digital Painting']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_4',
@@ -91,7 +91,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/magicienVert.png',
         'date' => '2025-06',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Character Design', 'Fantastique']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_5',
@@ -100,7 +100,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/picsMontagneux.png',
         'date' => '2025-06',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Paysage', 'Fantastique']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_6',
@@ -109,7 +109,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/grenouilleMecanique.png',
         'date' => '2025-03',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Concept Art', 'Steampunk']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_7',
@@ -118,7 +118,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/teteDeMortGeante.png',
         'date' => '2025-05',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Artwork', 'Horreur']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_8',
@@ -127,7 +127,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/scorpion.png',
         'date' => '2024-11',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Fan Art', 'Character Design']
+        'tags' => ['Illustration']
     ],
     [
         'id' => 'illust_9',
@@ -136,7 +136,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/citeVolante.png',
         'date' => '2024-07',
         'type' => 'illustration',
-        'tags' => ['Illustration', 'Concept Art', 'Fantasy']
+        'tags' => ['Illustration']
     ],
     
     // Photographies
@@ -147,7 +147,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photos/fleursBazinghen.JPG',
         'date' => '2024-01',
         'type' => 'photo',
-        'tags' => ['Photographie', 'Portrait', 'Nature']
+        'tags' => ['Photographie']
     ],
     [
         'id' => 'photo_1',
@@ -156,7 +156,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photos/fortAmbleteuse.JPG',
         'date' => '2024-02',
         'type' => 'photo',
-        'tags' => ['Photographie', 'Paysage', 'Architecture']
+        'tags' => ['Photographie']
     ],
     [
         'id' => 'photo_2',
@@ -165,7 +165,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photos/papilloonBazinghen.JPG',
         'date' => '2024-03',
         'type' => 'photo',
-        'tags' => ['Photographie', 'Macro', 'Nature']
+        'tags' => ['Photographie']
     ],
     [
         'id' => 'photo_3',
@@ -174,7 +174,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photos/roseBazinghen.JPG',
         'date' => '2024-03',
         'type' => 'photo',
-        'tags' => ['Photographie', 'Nature', 'Macro']
+        'tags' => ['Photographie']
     ],
     
     // Modèles 3D
@@ -185,7 +185,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/3d/chambreIsometrique.png',
         'date' => '2025-05',
         'type' => '3d',
-        'tags' => ['3D', 'Blender', 'Modélisation', 'Intérieur']
+        'tags' => ['3D']
     ],
     [
         'id' => '3d_1',
@@ -194,7 +194,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/3d/tuto1Fiole.png',
         'date' => '2025-03',
         'type' => '3d',
-        'tags' => ['3D', 'Blender', 'Objet', 'Matériaux']
+        'tags' => ['3D']
     ],
     [
         'id' => '3d_2',
@@ -203,7 +203,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/3d/tuto2Tour.png',
         'date' => '2025-04',
         'type' => '3d',
-        'tags' => ['3D', 'Blender', 'Architecture', 'Fantasy']
+        'tags' => ['3D']
     ],
     [
         'id' => '3d_3',
@@ -212,7 +212,7 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/3d/tuto3Citrouille.png',
         'date' => '2025-09',
         'type' => '3d',
-        'tags' => ['3D', 'Blender', 'Objet', 'Saisonnier']
+        'tags' => ['3D']
     ],
     
     // Dessins
@@ -221,175 +221,175 @@ $all_projects = [
         'title' => 'Dessin 1',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7062.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_1',
         'title' => 'Dessin 2',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7063.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_2',
         'title' => 'Dessin 3',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7064.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_3',
         'title' => 'Dessin 4',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7065.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_4',
         'title' => 'Dessin 5',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7066.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_5',
         'title' => 'Dessin 6',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7067.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_6',
         'title' => 'Dessin 7',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7069.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_7',
         'title' => 'Dessin 8',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7070.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_8',
         'title' => 'Dessin 9',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7071.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_9',
         'title' => 'Dessin 10',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7072.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_10',
         'title' => 'Dessin 11',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7073.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_11',
         'title' => 'Dessin 12',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7074.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_12',
         'title' => 'Dessin 13',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7075.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_13',
         'title' => 'Dessin 14',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7076.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_14',
         'title' => 'Dessin 15',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7077.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_15',
         'title' => 'Dessin 16',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7078.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_16',
         'title' => 'Dessin 17',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7079.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_17',
         'title' => 'Dessin 18',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7080.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_18',
         'title' => 'Dessin 19',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7081.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_19',
         'title' => 'Dessin 20',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7082.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_20',
         'title' => 'Dessin 21',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7083.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_21',
         'title' => 'Dessin 22',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7084.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_22',
         'title' => 'Dessin 23',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7086.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_23',
         'title' => 'Dessin 24',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7087.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ],
     [
         'id' => 'dessin_24',
         'title' => 'Dessin 25',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7088.jpg',
         'type' => 'dessin',
-        'tags' => ['Dessin', 'Crayon', 'Croquis']
+        'tags' => ['Dessin']
     ]
 ];
 
