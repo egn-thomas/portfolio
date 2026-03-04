@@ -236,33 +236,3 @@ body.dark-mode .theme-toggle:before {
 body.dark-mode .theme-toggle:after {
   color: #749ed7;
 }
-
-/* Mobile responsiveness */
-/* @media (max-width: 768px) {
-  .theme-toggle-wrapper {
-    top: 105px;
-    right: 1rem;
-  }
-
-  .theme-toggle {
-    width: 70px;
-    height: 40px;
-  }
-
-  .theme-toggle:before {
-    font-size: 10px;
-    left: -55px;
-  }
-
-  .theme-toggle:after {
-    font-size: 10px;
-    right: -50px;
-  }
-
-  .toggle__handler {
-    width: 34px;
-    height: 34px;
-    top: 2px;
-    left: 2px;
-  }
-} */

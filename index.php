@@ -11,7 +11,7 @@ $page_titles = [
     'dessins' => 'Dessins - ' . SITE_NAME,
     'dev' => 'Développement - ' . SITE_NAME,
     '3d' => 'Modélisation 3D - ' . SITE_NAME,
-    'photo' => 'Photographie - ' . SITE_NAME,
+    'autres' => 'Autres projets - ' . SITE_NAME,
     'cv' => 'CV - ' . SITE_NAME,
     'project' => 'Projet - ' . SITE_NAME,
     'artwork' => 'Œuvre - ' . SITE_NAME,
@@ -38,8 +38,8 @@ switch($page) {
     case '3d':
         include 'pages/3d.php';
         break;
-    case 'photo':
-        include 'pages/photographie.php';
+    case 'autres':
+        include 'pages/autres.php';
         break;
     case 'cv':
         include 'pages/cv.php';

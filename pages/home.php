@@ -46,12 +46,12 @@
                     </div>
                 </div>
             </a>
-            <a href="?page=photo" class="gallery-item-link">
+            <a href="?page=autres" class="gallery-item-link">
                 <div class="gallery-item">
-                    <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photo_sample.png" alt="Photography Sample" class="item-image">
+                    <img src="https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photo_sample.png" alt="Autres projets" class="item-image">
                     <div class="item-content">
-                        <h3 class="item-title">Photographie</h3>
-                        <p class="item-description">Mes photos et projets photographiques</p>
+                        <h3 class="item-title">Autres</h3>
+                        <p class="item-description">Tous les projets - Filtrez par tags</p>
                     </div>
                 </div>
             </a>

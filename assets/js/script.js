@@ -190,4 +190,59 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 2000);
     }
   })();
+
+  // Filter system for "Autres" page
+  (function () {
+    var filterForm = document.getElementById("filter-form");
+    if (!filterForm) return;
+
+    var checkboxes = filterForm.querySelectorAll(".filter-checkbox-input");
+
+    // Add smooth filtering with visual feedback
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        // Add a subtle animation effect
+        var label = this.closest(".filter-checkbox");
+        if (label) {
+          label.style.animation = "none";
+          setTimeout(function () {
+            label.style.animation = "pulse 0.4s ease";
+          }, 10);
+        }
+      });
+    });
+
+    // Prevent form submission and update URL instead
+    filterForm.addEventListener("submit", function (e) {
+      // Let the default form submission work
+      // The PHP will handle the filtering
+    });
+
+    // Add keyboard support for checkboxes
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    });
+  })();
 });
+
+// Add pulse animation for filter feedback
+var style = document.createElement("style");
+style.textContent = `
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .filter-checkbox {
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+  }
+`;
+document.head.appendChild(style);
