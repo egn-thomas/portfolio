@@ -1251,8 +1251,8 @@ body.dark-mode footer {
   margin-bottom: 0.5rem;
 }
 
-/* Project Card Enhancements */
-.project-card {
+/* Project Card Enhancements (scoped to page 'Autres') */
+#autres .project-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
@@ -1264,49 +1264,49 @@ body.dark-mode footer {
   padding: 1.5rem;
 }
 
-.project-card:hover {
+#autres .project-card:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(99, 102, 241, 0.3);
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
 }
 
-.project-image {
+#autres .project-image {
   width: 100%;
   height: 200px;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.project-image img {
+#autres .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.project-info h4 {
+#autres .project-info h4 {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
   color: var(--light);
 }
 
-.project-info h4 a {
+#autres .project-info h4 a {
   color: var(--primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.project-info h4 a:hover {
+#autres .project-info h4 a:hover {
   color: var(--secondary);
 }
 
-.project-info p {
+#autres .project-info p {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-.project-tech {
+#autres .project-tech {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -1316,16 +1316,16 @@ body.dark-mode footer {
   font-weight: 500;
 }
 
-.project-tags,
-.item-tags {
+#autres .project-tags,
+#autres .item-tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 
-.project-tag,
-.item-tag {
+#autres .project-tag,
+#autres .item-tag {
   background: rgba(236, 72, 153, 0.2);
   color: var(--secondary);
   padding: 0.35rem 0.75rem;
@@ -1412,12 +1412,12 @@ body.dark-mode footer {
     width: 100%;
   }
 
-  .project-card {
+  #autres .project-card {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
 
-  .project-image {
+  #autres .project-image {
     height: 250px;
   }
 

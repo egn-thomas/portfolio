@@ -141,7 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // make entire project cards clickable
   (function () {
-    document.querySelectorAll(".project-card").forEach(function (card) {
+    // make entire project cards clickable only on 'Autres' page
+    document.querySelectorAll("#autres .project-card").forEach(function (card) {
       var link = card.querySelector("a");
       if (link) {
         card.style.cursor = "pointer";
