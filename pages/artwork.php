@@ -7,7 +7,8 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $data_files = [
     'illustration' => 'data/illustrations.php',
     'photo' => 'data/photos.php',
-    '3d' => 'data/3d_models.php'
+    '3d' => 'data/3d_models.php',
+    'graphisme' => 'data/all_projects.php'
 ];
 
 if (!isset($data_files[$type])) {
@@ -21,7 +22,8 @@ require_once $data_files[$type];
 $variable_names = [
     'illustration' => 'illustrations',
     'photo' => 'photos',
-    '3d' => 'models_3d'
+    '3d' => 'models_3d',
+    'graphisme' => 'all_projects'
 ];
 
 $variable_name = $variable_names[$type] ?? $type . 's';
@@ -33,6 +35,14 @@ if (!isset($$variable_name)) {
 }
 
 $items = $$variable_name;
+
+// Pour les types venant de all_projects.php, filtrer par type
+if ($type === 'graphisme') {
+    $items = array_filter($items, function($item) {
+        return isset($item['type']) && $item['type'] === 'graphisme';
+    });
+    $items = array_values($items); // Réindexer
+}
 
 // Vérifier si l'item existe
 if (!isset($items[$id])) {
@@ -46,7 +56,8 @@ $item = $items[$id];
 $section_titles = [
     'illustration' => 'Illustration',
     'photo' => 'Photographie',
-    '3d' => 'Modélisation 3D'
+    '3d' => 'Modélisation 3D',
+    'graphisme' => 'Graphisme'
 ];
 
 $section_title = $section_titles[$type] ?? ucfirst($type);
