@@ -390,7 +390,25 @@ $all_projects = [
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/dessins/IMG_7088.jpg',
         'type' => 'dessin',
         'tags' => ['Dessin']
-    ]
+    ],
+    [
+        'id' => 'graphisme_1',
+        'title' => 'Carte de visite - Sage Femme',
+        'description' => 'Une carte de visite réalisée pour ma soeur qui est sage femme. J\'ai voulu créer une ambiance douce et rassurante, en utilisant des couleurs apaisantes et des éléments graphiques évoquant la maternité et les soins de santé. Le design est à la fois professionnel et chaleureux, reflétant l\'approche bienveillante de ma soeur envers ses patientes.',
+        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/graphisme/carteDeVisiteEmmaJ.png',
+        'date' => '2026-02',
+        'type' => 'graphisme',
+        'tags' => ['Graphisme', 'Carte de visite']
+    ],
+    [
+        'id' => 'graphisme_2',
+        'title' => 'Logo d\'un projet de la nuit de l\'info 2024',
+        'description' => 'Logo réalisé pour un projet de la nuit de l\'info 2024. Le projet avait pour but de venir en aide a la société "Race for water" qui oeuvre pour l\'accès à l\'eau potable dans les pays en développement.',
+        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/graphisme/logoNuitIut.png',
+        'date' => '2024-11',
+        'type' => 'graphisme',
+        'tags' => ['Graphisme', 'Logo']
+    ],
 ];
 
 // Fonction pour extraire tous les tags uniques
