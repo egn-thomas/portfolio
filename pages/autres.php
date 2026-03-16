@@ -38,12 +38,13 @@ foreach ($projects as $project) {
 }
 
 // Ordre d'affichage des sections
-$type_order = ['dev', 'illustration', '3d', 'photo', 'dessin'];
+$type_order = ['dev', 'illustration', '3d', 'photo', 'graphisme', 'dessin'];
 $type_labels = [
     'dev' => 'Développement',
     'illustration' => 'Illustration',
     '3d' => 'Modélisation 3D',
     'photo' => 'Photographie',
+    'graphisme' => 'Graphisme',
     'dessin' => 'Dessin'
 ];
 ?>
