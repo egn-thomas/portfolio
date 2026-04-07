@@ -119,7 +119,7 @@
         padding: 10px;
         border: 1px solid var(--border-color);
         border-radius: 4px;
-        background: var(--input-bg);
+        background: white;
         color: var(--text-color);
         font-size: 16px;
     }
