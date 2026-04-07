@@ -43,11 +43,10 @@ $dev_projects = [
                                Ce projet a été réalisé avec Futter, un framework de développement d\'applications mobiles, ce qui m\'a permis d\'apprendre à développer pour les plateformes iOS et Android. L\'application offre une interface utilisateur intuitive et conviviale, permettant de se connecter avec d\'autres utilisateurs via QR code et de partager des moments de leur vie réelle en toute sécurité. <br><br>
                                Ce projet m\'a permis d\'apprendre à utiliser le framework Flutter pour le développement d\'applications mobiles, ainsi que de renforcer mes compétences en développement d\'applications web et en gestion de projet en équipe.',
 
-        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
+        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/Alto/Alto-01.png',
         'gallery' => [
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-BadSettings.png',
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-IAmode.png'
+            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/Alto/Alto-01.png',
+            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/Alto/Alto-02.png'
         ],
         'technologies' => ['Flutter', 'Dart'],
         'github' => 'https://github.com/egn-thomas/alto.git',
@@ -61,11 +60,11 @@ $dev_projects = [
                                Ce projet a été réalisé avec NodeJS pour le backend et VueJS pour le frontend, ce qui m\'a permis d\'apprendre à développer une application web complète en utilisant ces technologies qui sont très utilisées dans de vraies applications professionnelles. Le cadre de travail mis en place durant ce TP était opptimisé pour nous rapprocher le plus possible du travail en entreprise.<br><br>
                                Ce projet m\'a permis d\'apprendre à utiliser NodeJS et Vue pour le développement web. Il m\'a également permis d\'aborder un environnement de travail professionnel, notamment via l\'utilisation de Git',
 
-        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
+        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/TgcSpa/Tgc-Spa-01.png',
         'gallery' => [
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-BadSettings.png',
-            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-IAmode.png'
+            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/TgcSpa/Tgc-Spa-01.png',
+            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/TgcSpa/Tgc-Spa-02.png',
+            'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/TgcSpa/Tgc-Spa-03.png'
         ],
         'technologies' => ['NodeJS', 'VueJS', 'Git'],
         'github' => 'https://github.com/celien-svg/alto.git',
