@@ -120,7 +120,7 @@
         border: 1px solid var(--border-color);
         border-radius: 4px;
         background: white;
-        color: var(--text-color);
+        color: black;
         font-size: 16px;
     }
 
