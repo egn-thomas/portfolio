@@ -19,6 +19,7 @@
             <li><a href="?page=dessins" class="<?php echo is_active('dessins'); ?>">Dessin</a></li>
             <li><a href="?page=autres" class="<?php echo is_active('autres'); ?>">Autres</a></li>
             <li><a href="?page=cv" class="<?php echo is_active('cv'); ?>">CV</a></li>
+            <li><a href="?page=contact" class="<?php echo is_active('contact'); ?>">Contact</a></li>
         </ul>
     </div>
 </nav>

@@ -15,7 +15,8 @@ $page_titles = [
     'cv' => 'CV - ' . SITE_NAME,
     'project' => 'Projet - ' . SITE_NAME,
     'artwork' => 'Œuvre - ' . SITE_NAME,
-    'miniArtwork' => 'Dessin - ' . SITE_NAME
+    'miniArtwork' => 'Dessin - ' . SITE_NAME,
+    'contact' => 'Contact - ' . SITE_NAME
 ];
 
 $page_title = $page_titles[$page] ?? SITE_NAME;
@@ -25,7 +26,7 @@ include 'includes/header.php';
 include 'includes/nav.php';
 
 // Router - Charger la bonne page
-switch($page) {
+switch ($page) {
     case 'illustration':
         include 'pages/illustration.php';
         break;
@@ -52,6 +53,9 @@ switch($page) {
         break;
     case 'miniArtwork':
         include 'pages/miniArtwork.php';
+        break;
+    case 'contact':
+        include 'pages/contact.php';
         break;
     default:
         include 'pages/home.php';
