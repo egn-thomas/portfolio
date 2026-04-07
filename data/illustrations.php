@@ -8,7 +8,7 @@ $illustrations = [
     ],
     [
         'title' => 'Painting Digital "Blizzard"',
-        'description' => 'Concept art d\'un aventurier affrontant une tempête de neige, réalisé sur procreate. J\'ai utilisé la profondeur de champ pour créer une atmosphère immersive et donner une impression de froid glacial, en jouant avec les nuances de blanc et les effets de lumière dans la tempête.',
+        'description' => 'Concept art d\'un aventurier affrontant une tempête de neige, réalisé sur Procreate. J\'ai utilisé la profondeur de champ pour créer une atmosphère immersive et donner une impression de froid glacial, en jouant avec les nuances de blanc et les effets de lumière dans la tempête.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/blizzard.png',
         'date' => '2025-10'
     ],
@@ -43,14 +43,14 @@ $illustrations = [
         'date' => '2025-03'
     ],
     [
-        'title' => 'Painting Digital "Tete de mort géante"',
-        'description' => 'Illustration numérique réalisée sur Photoshop. Pour représenter l\'ambiance sombre et nocturne de ce painting, j\'ai du faire un travail assez conséquend sur les ombres et les lumieres. Notamment en utilisant des calques de réglages pour ajuster les contrastes et les niveaux de luminosité.',
+        'title' => 'Painting Digital "Tête de mort géante"',
+        'description' => 'Illustration numérique réalisée sur Photoshop. Pour représenter l\'ambiance sombre et nocturne de ce painting, j\'ai dû faire un travail assez conséquent sur les ombres et les lumières. Notamment en utilisant des calques de réglages pour ajuster les contrastes et les niveaux de luminosité.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/teteDeMortGeante.png',
         'date' => '2025-05'
     ],
     [
         'title' => 'Painting Digital "Scorpion"',
-        'description' => 'Inspiré du personnage de marvel du même nom, j\'ai utilisé les code du comic book pour m\'approprier ce personnage et le mettre en scène sur le toit d\'un gratte ciel.',
+        'description' => 'Inspiré du personnage de Marvel du même nom, j\'ai utilisé les codes du comic book pour m\'approprier ce personnage et le mettre en scène sur le toit d\'un gratte-ciel.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/scorpion.png',
         'date' => '2024-11'
     ],
@@ -61,10 +61,10 @@ $illustrations = [
         'date' => '2024-05'
     ],
     [
-        'title' => 'Painting Digital "Samurail"',
-        'description' => 'Character design d\'un samurail réalisé à mes debuts sur procreate. Il semble disparaitre dans un épais nuage de fumée multicolore tout en rengainant son sabre.',
+        'title' => 'Painting Digital "Samurai"',
+        'description' => 'Character design d\'un samurai réalisé à mes débuts sur Procreate. Il semble disparaître dans un épais nuage de fumée multicolore tout en rengainant son sabre.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/samurai.png',
         'date' => '2024-02'
-    ],    
+    ],
 ];
 ?>

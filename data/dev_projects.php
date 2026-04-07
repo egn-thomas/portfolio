@@ -6,7 +6,7 @@ $dev_projects = [
         'long_description' => 'Un jeu de plateforme 2D inspiré des classiques du RPG. <br><br>
                                Le jeu propose une aventure de survie à travers des niveaux générés procéduralement à la manière d\'un labyrinthe (voir image 3). Le joueur incarne un personnage qui doit explorer ces niveaux, collecter des ressources (voir image 4), combattre des ennemis et résoudre des énigmes pour progresser. <br><br>
                                Le développement de ce projet m\'a permis d\'approfondir mes compétences en C++ en déployant une architecture de code SOLID en parfaite autonomie. Cela m\'a permis de maintenir un code propre et évolutif. J\'ai également utilisé la bibliothèque SFML pour gérer les aspects graphiques du jeu. <br><br>
-                               Au delà de l\'aspect technique, ce projet a été pour moi un moyen de mettre en pratique mes connaissances en illustration et animation car j\'ai tenu a créer moi même tous les assets graphiques du jeu, ce qui m\'a permis de développer une cohérence visuelle forte et de donner vie à mon univers de jeu.',
+                               Au-delà de l\'aspect technique, ce projet a été pour moi un moyen de mettre en pratique mes connaissances en illustration et animation car j\'ai tenu à créer moi-même tous les assets graphiques du jeu, ce qui m\'a permis de développer une cohérence visuelle forte et de donner vie à mon univers de jeu.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/gameOfThomas/gameOfThomas-Presentation.png',
         'gallery' => [
             'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/gameOfThomas/gameOfThomas-Presentation.png',
@@ -21,10 +21,10 @@ $dev_projects = [
     ],
     [
         'title' => 'Logiciel de traitement d\'images spatiales',
-        'description' => 'Outil de réduction des images spatiales développé en python par équipe de 4 à l\'occasion d\'une SAÉ organisée par le département informatique de l\'IUT de Calais',
-        'long_description' => 'Ce projet a été réalisé dans le cadre d\'une SAÉ organisée par le département informatique de l\'IUT de Calais. Il s\'agit d\'un logiciel de traitement d\images spatiales qui a pour vocation de réduire la taille des étoiles sur des images astronomiques afin de faciliter leur analyse. <br><br>
-                               Le logiciel utilise des technique de traitement d\'images tel que la dilatation et l\'érosion pour réduire la taille des étoiles tout en préservant les détails importants de l\'image. Il offre une interface utilisateur simple et intuitive, permettant aux utilisateurs de charger leurs images, d\'appliquer le traitement et de visualiser les résultats facilement. <br><br>
-                               Ce projet a également été pour moi l\'occasion d\'aborder le développement d\une intelligence artificielle via machine learning, qui a été utilisée pour améliorer la précision du traitement en apprenant à reconnaître les étoiles et à ajuster les paramètres de réduction en conséquence.',
+        'description' => 'Outil de réduction des images spatiales développé en Python par équipe de 4 à l\'occasion d\'une SAÉ organisée par le département informatique de l\'IUT de Calais',
+        'long_description' => 'Ce projet a été réalisé dans le cadre d\'une SAÉ organisée par le département informatique de l\'IUT de Calais. Il s\'agit d\'un logiciel de traitement d\'images spatiales qui a pour vocation de réduire la taille des étoiles sur des images astronomiques afin de faciliter leur analyse. <br><br>
+                               Le logiciel utilise des techniques de traitement d\'images tels que la dilatation et l\'érosion pour réduire la taille des étoiles tout en préservant les détails importants de l\'image. Il offre une interface utilisateur simple et intuitive, permettant aux utilisateurs de charger leurs images, d\'appliquer le traitement et de visualiser les résultats facilement. <br><br>
+                               Ce projet a également été pour moi l\'occasion d\'aborder le développement d\'une intelligence artificielle via machine learning, qui a été utilisée pour améliorer la précision du traitement en apprenant à reconnaître les étoiles et à ajuster les paramètres de réduction en conséquence.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
         'gallery' => [
             'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/astrophoto/astrophoto-GoodSettings.png',
@@ -40,7 +40,7 @@ $dev_projects = [
         'title' => 'ALTO - Le réseau social IRL',
         'description' => 'Projet de développement d\'un réseau social IRL en équipe de 2, réalisé dans le cadre du cours de développement d\'application web',
         'long_description' => 'ALTO est une plateforme de réseau social IRL (In Real Life) qui utilise un système de pairing via QR code pour connecter des utilisateurs dans la vie réelle. L\'objectif de ce projet étant de créer une application de réseau social qui favorise la sécurité des jeunes utilisateurs en limitant les interactions en ligne et en encourageant les rencontres en personne. <br><br>
-                               Ce projet a été réalisé avec Futter, un framework de développement d\'applications mobiles, ce qui m\'a permis d\'apprendre à développer pour les plateformes iOS et Android. L\'application offre une interface utilisateur intuitive et conviviale, permettant de se connecter avec d\'autres utilisateurs via QR code et de partager des moments de leur vie réelle en toute sécurité. <br><br>
+                               Ce projet a été réalisé avec Flutter, un framework de développement d\'applications mobiles, ce qui m\'a permis d\'apprendre à développer pour les plateformes iOS et Android. L\'application offre une interface utilisateur intuitive et conviviale, permettant de se connecter avec d\'autres utilisateurs via QR code et de partager des moments de leur vie réelle en toute sécurité. <br><br>
                                Ce projet m\'a permis d\'apprendre à utiliser le framework Flutter pour le développement d\'applications mobiles, ainsi que de renforcer mes compétences en développement d\'applications web et en gestion de projet en équipe.',
 
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/Alto/Alto-01.png',
@@ -54,10 +54,10 @@ $dev_projects = [
         'role' => 'Développeur, UI/UX Designer'
     ],
     [
-        'title' => 'Pokemon TCG - Application de collection de cartes à jouer Pokemon',
-        'description' => 'Projet de développement web en nodeJS d\'une application de cartes pokemon à collectionner.',
-        'long_description' => 'Pokemon TCG est une application de gestion de collection de cartes à jouer Pokemon. L\'application permet aux utilisateurs de créer et de gérer leur collection de cartes, d\'ajouter des cartes à leur collection, de faire des combats avec d\'autres utilisateurs. <br><br>
-                               Ce projet a été réalisé avec NodeJS pour le backend et VueJS pour le frontend, ce qui m\'a permis d\'apprendre à développer une application web complète en utilisant ces technologies qui sont très utilisées dans de vraies applications professionnelles. Le cadre de travail mis en place durant ce TP était opptimisé pour nous rapprocher le plus possible du travail en entreprise.<br><br>
+        'title' => 'Pokémon TCG - Application de collection de cartes à jouer Pokémon',
+        'description' => 'Projet de développement web en NodeJS d\'une application de cartes Pokémon à collectionner.',
+        'long_description' => 'Pokémon TCG est une application de gestion de collection de cartes à jouer Pokémon. L\'application permet aux utilisateurs de créer et de gérer leur collection de cartes, d\'ajouter des cartes à leur collection, de faire des combats avec d\'autres utilisateurs. <br><br>
+                               Ce projet a été réalisé avec NodeJS pour le backend et VueJS pour le frontend, ce qui m\'a permis d\'apprendre à développer une application web complète en utilisant ces technologies qui sont très utilisées dans de vraies applications professionnelles. Le cadre de travail mis en place durant ce TP était optimisé pour nous rapprocher le plus possible du travail en entreprise.<br><br>
                                Ce projet m\'a permis d\'apprendre à utiliser NodeJS et Vue pour le développement web. Il m\'a également permis d\'aborder un environnement de travail professionnel, notamment via l\'utilisation de Git',
 
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/developpement/TgcSpa/Tgc-Spa-01.png',

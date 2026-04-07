@@ -8,7 +8,7 @@ $photos = [
     ],
     [
         'title' => 'Fort d\'Ambleteuse',
-        'description' => 'Vue du fort d\'ambleteuse depuis la plage',
+        'description' => 'Vue du fort d\'Ambleteuse depuis la plage',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/photos/fortAmbleteuse.JPG',
         'date' => '2024-02'
     ],
