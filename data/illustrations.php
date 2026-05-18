@@ -1,6 +1,12 @@
 <?php
 $illustrations = [
     [
+        'title' => 'Painting Digital "La Base Planétaire"',
+        'description' => 'Concept art d\'une base aux allures lointaines, réalisée sur Photoshop. J\'ai utilisé des techniques de peinture numérique pour créer une atmosphère ensoleillée et immersive, en jouant avec les nuances de jaune et orange et les effets de lumière pour donner vie à cet environnement.',
+        'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/basePlanetaire.png',
+        'date' => '2026-05'
+    ],
+    [
         'title' => 'Painting Digital "Forêt Enchantée"',
         'description' => 'Illustration numérique d\'une forêt enchantée réalisée sur Photoshop. J\'ai mis l\'accent sur les jeux de lumière pour guider le regard et donner une impression de calme dans ce paysage.',
         'image' => 'https://pub-d6e16cabe530450d941567e9209c59fb.r2.dev/images/illustrations/foret.png',
